@@ -46,6 +46,7 @@ from invenio_accounts.views import blueprint as accounts_blueprint
 from invenio_accounts_rest import InvenioAccountsREST
 from invenio_assets import InvenioAssets
 from invenio_db import InvenioDB
+from invenio_i18n import InvenioI18N
 from invenio_indexer import InvenioIndexer
 from invenio_jsonschemas import InvenioJSONSchemas
 from invenio_oauth2server import InvenioOAuth2Server, InvenioOAuth2ServerREST
@@ -87,6 +88,7 @@ def init_app(app):
             '/hooks/receivers/circulation_cancel/events/'),
     )
 
+    InvenioI18N(app)
     Babel(app)
     Menu(app)
     Breadcrumbs(app)
